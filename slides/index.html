@@ -1,115 +1,142 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
+  <head>
     <title>Docker 101 - Présentation des commandes de base</title>
-		<meta charset="utf-8">
+    <meta charset="utf-8">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-                <!-- There are bunch of alternate themes in css/theme -->
-		<link rel="stylesheet" href="css/theme/amtheme.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <!-- There are bunch of alternate themes in css/theme -->
+    <link rel="stylesheet" href="css/theme/amtheme.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
 
-                <!-- Live reload -->
-                <script type="text/javascript">
-                    document.write('<script src="//' + window.location.hostname + ':35729/livereload.js"><'+'/script>');
-                </script>
-	</head>
+    <!-- Live reload -->
+    <script type="text/javascript">
+      document.write('<script src="//' + window.location.hostname + ':35729/livereload.js">
+      <'+'/script>');
+    </script>
+  </head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+<div class="reveal">
 
-			<div class="slides">
-			<section data-markdown="pres/slides.md"
-			         data-separator="^---\n"
-			         data-separator-vertical="^-\n"
-			         data-notes="^Note:"
-			         data-charset="utf-8">
-			</section>
-      
-      
-      <section class="in-3d-appear has-light-background" data-background-color="#ffffff" data-id="a00ada9661a28e598721713523dde79b"><div class="sl-block" data-block-type="text" style="width: 663px; left: 137px; top: 238px; height: auto;" data-block-id="e1bb727d5c3a0bb95a978c6a1a624c5c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-<h1>                               </h1>
+  <div class="slides">
+    <section data-markdown="pres/slides.md"
+        data-separator="^---\n"
+        data-separator-vertical="^-\n"
+        data-notes="^Note:"
+        data-charset="utf-8">
+    </section>
 
-<h1 style="text-align:center">for</h1>
 
-<h1>
-<span style="font-size:24px"><em>(java)</em></span> <span style="font-size:64px">Developers</span>
-</h1>
-</div></div>
-<div class="sl-block" data-block-type="image" data-block-id="840de353ad4ce612630bd460ae564907" style="min-width: 30px; min-height: 30px; width: 266.299126637555px; height: 235px; left: 335px; top: 70px;"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="519" data-natural-height="458" style="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/350076/images/1546835/docker-100275159-orig.jpg"></div></div>
-<div class="sl-block" data-block-type="image" data-block-id="327c5c476106f1e6e8be362dd9471c2f" style="min-width: 30px; min-height: 30px; width: 115px; height: 118.709677419355px; left: 720px; top: 431px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="124" data-natural-height="128" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/350076/images/1546876/Thinking.jpg.png"></div></div>
-<div class="sl-block" data-block-type="text" data-block-id="9034ddf720536c4bd6933b519bc5740e" style="height: auto; min-width: 30px; min-height: 30px; width: 324px; left: 307px; top: 519px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
-<p><span style="font-size:32px">RAFAEL  BENEVIDES</span></p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 139px; left: 399px; top: 560px;" data-block-id="42afb45f1df0868111e95e30af965238"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
-<h3><span style="font-size:1.0em">@rafabene</span></h3>
-</div></div>
-<div class="sl-block" data-block-type="image" data-block-id="60c33db1d79f0333afa3218660b129fc" style="min-width: 30px; min-height: 30px; width: 360px; height: 300px; left: -53px; top: 38px;"><div class="sl-block-content" style="z-index: 16;"></div></div></section>
-      
-      
-      
-      
-			</div>
+    <section class="in-3d-appear has-light-background" data-background-color="#ffffff" data-id="a00ada9661a28e598721713523dde79b">
+      <div class="sl-block" data-block-type="text" style="width: 663px; left: 137px; top: 238px; height: auto;" data-block-id="e1bb727d5c3a0bb95a978c6a1a624c5c">
+        <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+          <h1>                               </h1>
 
-		</div>
+          <h1 style="text-align:center">for</h1>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+          <h1>
+            <span style="font-size:24px">
+              <em>(java)</em>
+            </span>
+            <span style="font-size:64px">Developers</span>
+          </h1>
+        </div>
+      </div>
+      <div class="sl-block" data-block-type="image" data-block-id="840de353ad4ce612630bd460ae564907" style="min-width: 30px; min-height: 30px; width: 266.299126637555px; height: 235px; left: 335px; top: 70px;">
+        <div class="sl-block-content" style="z-index: 12;">
+          <img data-natural-width="519" data-natural-height="458" style="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/350076/images/1546835/docker-100275159-orig.jpg">
+          </div>
+        </div>
+        <div class="sl-block" data-block-type="image" data-block-id="327c5c476106f1e6e8be362dd9471c2f" style="min-width: 30px; min-height: 30px; width: 115px; height: 118.709677419355px; left: 720px; top: 431px;">
+          <div class="sl-block-content" style="z-index: 13;">
+            <img style="" data-natural-width="124" data-natural-height="128" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/350076/images/1546876/Thinking.jpg.png">
+            </div>
+          </div>
+          <div class="sl-block" data-block-type="text" data-block-id="9034ddf720536c4bd6933b519bc5740e" style="height: auto; min-width: 30px; min-height: 30px; width: 324px; left: 307px; top: 519px;">
+            <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+              <p>
+                <span style="font-size:32px">RAFAEL  BENEVIDES</span>
+              </p>
+            </div>
+          </div>
+          <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 139px; left: 399px; top: 560px;" data-block-id="42afb45f1df0868111e95e30af965238">
+            <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+              <h3>
+                <span style="font-size:1.0em">@rafabene</span>
+              </h3>
+            </div>
+          </div>
+          <div class="sl-block" data-block-type="image" data-block-id="60c33db1d79f0333afa3218660b129fc" style="min-width: 30px; min-height: 30px; width: 360px; height: 300px; left: -53px; top: 38px;">
+            <div class="sl-block-content" style="z-index: 16;"/>
+          </div>
+        </section>
 
-		<script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				progress: false,
-				history: true,
-				center: false,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+      </div>
 
-                    document.addEventListener("DOMContentLoaded", function() {
-                        Reveal.configure({
-                          keyboard: {
-                              40: 'next', // down moves to next slide - for my clicker
-                              38: 'prev', // up moves to previous slide - for my clicker
-                            }
-                          });
-                        });
-		</script>
+    </div>
 
-	</body>
+    <script src="lib/js/head.min.js"/>
+    <script src="js/reveal.js"/>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: false,
+      progress: false,
+      history: true,
+      center: false,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+      Reveal.configure({
+      keyboard: {
+      40: 'next', // down moves to next slide - for my clicker
+      38: 'prev', // up moves to previous slide - for my clicker
+      }
+      });
+      });
+    </script>
+
+  </body>
 </html>
+                      
