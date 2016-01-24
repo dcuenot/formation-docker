@@ -12,13 +12,9 @@ WORKDIR /revealjs
 RUN npm install -g grunt-cli && npm install
 RUN sed -i Gruntfile.js -e "s/files: \[ 'index\.html'\]/files: [ 'pres\/**' ]/"
 
-COPY index.html /revealjs/
-COPY custom.css /revealjs/css/
-COPY title.js /revealjs/plugin/
-COPY test_slides.md /revealjs/pres/slides.md
-COPY amtheme.css /revealjs/css/theme/
-ONBUILD ADD slides.md /revealjs/md/
+
+ONBUILD ADD . /revealjs/
 
 EXPOSE 8000
-VOLUME ["/revealjs/md/"]
+VOLUME ["/revealjs/"]
 CMD ["grunt", "serve"]
